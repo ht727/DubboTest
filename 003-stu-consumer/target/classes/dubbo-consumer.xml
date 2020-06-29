@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:dubbo="http://dubbo.apache.org/schema/dubbo"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd http://dubbo.apache.org/schema/dubbo http://dubbo.apache.org/schema/dubbo/dubbo.xsd">
+
+    <!--创建dubbo唯一名称-->
+    <dubbo:application name="003-stu-consumer"/>
+
+    <!--指定消费服务,id 为服务提供者提供bean的ID-->
+    <dubbo:reference interface="com.huangtan666.service.StudentService" id="studentServiceImp"/>
+
+    <!--订阅注册中心-->
+    <dubbo:registry address="zookeeper://192.168.2.103:2181"/>
+</beans>

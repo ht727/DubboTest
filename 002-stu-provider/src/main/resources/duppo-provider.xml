@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:dubbo="http://dubbo.apache.org/schema/dubbo"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd http://dubbo.apache.org/schema/dubbo http://dubbo.apache.org/schema/dubbo/dubbo.xsd">
+
+    <!--创建dubbo名称，保证唯一-->
+    <dubbo:application name="002-stu-provider"/>
+
+    <!--指定协议和端口,，dubbo有很多协议实现RPC接口，常用的协议名称是dubbo，端口20880-->
+    <dubbo:protocol name="dubbo" port="20880"/>
+
+    <!--暴露服务，表示提供的服务内容-->
+    <dubbo:service interface="com.huangtan666.service.StudentService" ref="studentServiceImpl"/>
+
+    <!--提供的服务，一那就是接口的实现类，创建一个bean对象，保存到dubbo中-->
+    <bean id="studentServiceImpl" class="com.huangtan666.service.impl.StudentServiceImpl"/>
+
+    <!--注册注册中心,使用的zookeeper组件作为注册中心-->
+    <dubbo:registry address="zookeeper://192.168.2.103:2181"/>
+
+</beans>

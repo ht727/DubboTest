@@ -1,0 +1,109 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+  <modelVersion>4.0.0</modelVersion>
+
+  <groupId>com.huangtan666</groupId>
+  <artifactId>004-maven-pom</artifactId>
+  <version>1.0</version>
+  <!--pom项目必须把packing改为pom-->
+  <packaging>pom</packaging>
+
+  <!--属性管理-->
+  <properties>
+    <!--按照K-V形式,命名规则key一般是组件名称，用减号分隔，都是小写，版本号用.句号带version-->
+    <!--依赖属性管理-->
+    <spring-context.version>5.2.5.RELEASE</spring-context.version>
+    <spring-webmvc.version>5.2.5.RELEASE</spring-webmvc.version>
+    <servlet-api.version>2.5</servlet-api.version>
+    <jstl.version>1.2</jstl.version>
+    <dubbo.version>2.6.8</dubbo.version>
+    <netty-all.version>4.1.50.Final</netty-all.version>
+    <student-api.version>1.0</student-api.version>
+    <curator-framework.version>4.1.0</curator-framework.version>
+
+    <!--插件属性管理-->
+    <maven-compiler-plugin.version>3.8.0</maven-compiler-plugin.version>
+    <maven-compiler-plugin.configuration.source>1.8</maven-compiler-plugin.configuration.source>
+    <maven-compiler-plugin.configuration.target>1.8</maven-compiler-plugin.configuration.target>
+  </properties>
+
+  <!--依赖管理-->
+  <dependencyManagement>
+    <dependencies>
+      <!--spring依赖-->
+      <dependency>
+        <groupId>org.springframework</groupId>
+        <artifactId>spring-context</artifactId>
+        <version>${spring-context.version}</version>
+      </dependency>
+
+      <!--springmvc依赖-->
+      <dependency>
+        <groupId>org.springframework</groupId>
+        <artifactId>spring-webmvc</artifactId>
+        <version>${spring-webmvc.version}</version>
+      </dependency>
+
+      <!--jsp本身就是servlet，因此需要添加servlet依赖-->
+      <dependency>
+        <groupId>javax.servlet</groupId>
+        <artifactId>servlet-api</artifactId>
+        <version>${servlet-api.version}</version>
+      </dependency>
+
+      <!--jstl标签库-->
+      <dependency>
+        <groupId>javax.servlet</groupId>
+        <artifactId>jstl</artifactId>
+        <version>${jstl.version}</version>
+      </dependency>
+
+      <!--dubbo实现RPC通信-->
+      <dependency>
+        <groupId>com.alibaba</groupId>
+        <artifactId>dubbo</artifactId>
+        <version>${dubbo.version}</version>
+      </dependency>
+
+      <!--dubbo 依赖netty-all-->
+      <dependency>
+        <groupId>io.netty</groupId>
+        <artifactId>netty-all</artifactId>
+        <version>${netty-all.version}</version>
+      </dependency>
+
+      <!--公共接口依赖-->
+      <dependency>
+        <groupId>com.huangtan666</groupId>
+        <artifactId>001-student-api</artifactId>
+        <version>${student-api.version}</version>
+      </dependency>
+
+      <!--zookeeper客户端-->
+      <dependency>
+        <groupId>org.apache.curator</groupId>
+        <artifactId>curator-framework</artifactId>
+        <version>${curator-framework.version}</version>
+      </dependency>
+    </dependencies>
+  </dependencyManagement>
+
+  <!--插件管理-->
+  <build>
+    <pluginManagement>
+      <plugins>
+        <plugin>
+          <groupId>org.apache.maven.plugins</groupId>
+          <artifactId>maven-compiler-plugin</artifactId>
+          <version>${maven-compiler-plugin.version}</version>
+          <configuration>
+            <source>${maven-compiler-plugin.configuration.source}</source>
+            <target>${maven-compiler-plugin.configuration.target}</target>
+          </configuration>
+        </plugin>
+      </plugins>
+    </pluginManagement>
+  </build>
+</project>

@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+  <modelVersion>4.0.0</modelVersion>
+  <!--找到父类-->
+  <parent>
+    <groupId>com.huangtan666</groupId>
+    <artifactId>004-maven-pom</artifactId>
+    <version>1.0</version>
+    <!--找到父类pom文件的路径-->
+    <relativePath>../004-maven-pom/pom.xml</relativePath>
+  </parent>
+
+  <groupId>com.huangtan666</groupId>
+  <artifactId>001-student-api</artifactId>
+  <version>1.0</version>
+  <!--公共依赖，指定打包方式为jar包-->
+  <packaging>jar</packaging>
+
+
+  <build>
+    <plugins>
+      <!--指定编译插件，使用maven编译，并且按照jdk1.8编译-->
+      <plugin>
+        <groupId>org.apache.maven.plugins</groupId>
+        <artifactId>maven-compiler-plugin</artifactId>
+      </plugin>
+    </plugins>
+  </build>
+</project>

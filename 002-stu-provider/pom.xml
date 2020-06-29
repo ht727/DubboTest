@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+  <modelVersion>4.0.0</modelVersion>
+  <!--找到父类-->
+  <parent>
+    <groupId>com.huangtan666</groupId>
+    <artifactId>004-maven-pom</artifactId>
+    <version>1.0</version>
+    <!--找到父类pom文件的路径-->
+    <relativePath>../004-maven-pom/pom.xml</relativePath>
+  </parent>
+
+  <groupId>com.huangtan666</groupId>
+  <artifactId>002-stu-provider</artifactId>
+  <version>1.0</version>
+  <packaging>war</packaging>
+
+  <!--依赖管理-->
+  <dependencies>
+    <!--dubbo强依赖于spring框架-->
+    <dependency>
+      <groupId>org.springframework</groupId>
+      <artifactId>spring-context</artifactId>
+    </dependency>
+
+      <!--视图层，springmvc依赖-->
+    <dependency>
+      <groupId>org.springframework</groupId>
+      <artifactId>spring-webmvc</artifactId>
+    </dependency>
+
+    <!--jsp本身也是servlet，所以需要添加servlet依赖-->
+    <dependency>
+      <groupId>javax.servlet</groupId>
+      <artifactId>servlet-api</artifactId>
+    </dependency>
+    <!--jstl标签库-->
+    <dependency>
+      <groupId>javax.servlet</groupId>
+      <artifactId>jstl</artifactId>
+    </dependency>
+
+    <!--dubbo依赖，实现业务远程调用RPC技术-->
+    <dependency>
+      <groupId>com.alibaba</groupId>
+      <artifactId>dubbo</artifactId>
+    </dependency>
+    <!--dubbo 依赖于netty-all-->
+    <dependency>
+      <groupId>io.netty</groupId>
+      <artifactId>netty-all</artifactId>
+    </dependency>
+
+    <!--公共接口依赖 001-student-api-->
+    <dependency>
+      <groupId>com.huangtan666</groupId>
+      <artifactId>001-student-api</artifactId>
+    </dependency>
+
+    <!--添加zookeeper客户端依赖-->
+    <dependency>
+      <groupId>org.apache.curator</groupId>
+      <artifactId>curator-framework</artifactId>
+    </dependency>
+  </dependencies>
+
+ <build>
+   <plugins>
+     <plugin>
+       <groupId>org.apache.maven.plugins</groupId>
+       <artifactId>maven-compiler-plugin</artifactId>
+     </plugin>
+   </plugins>
+ </build>
+</project>
