@@ -15,7 +15,7 @@
     <!--按照K-V形式,命名规则key一般是组件名称，用减号分隔，都是小写，版本号用.句号带version-->
     <!--依赖属性管理-->
     <spring-context.version>5.2.5.RELEASE</spring-context.version>
-    <spring-webmvc.version>5.2.5.RELEASE</spring-webmvc.version>
+    <spring-webmvc.version>5.3.18</spring-webmvc.version>
     <servlet-api.version>2.5</servlet-api.version>
     <jstl.version>1.2</jstl.version>
     <dubbo.version>2.6.8</dubbo.version>
