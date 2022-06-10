@@ -18,7 +18,7 @@
     <spring-webmvc.version>5.2.5.RELEASE</spring-webmvc.version>
     <servlet-api.version>2.5</servlet-api.version>
     <jstl.version>1.2</jstl.version>
-    <dubbo.version>2.6.8</dubbo.version>
+    <dubbo.version>2.6.12</dubbo.version>
     <netty-all.version>4.1.50.Final</netty-all.version>
     <student-api.version>1.0</student-api.version>
     <curator-framework.version>4.1.0</curator-framework.version>
